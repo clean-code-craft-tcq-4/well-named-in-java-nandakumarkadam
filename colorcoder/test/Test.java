@@ -1,24 +1,29 @@
-package colorcoder;
+package colorcoder.test;
+
+import colorcoder.ColorPair;
+import colorcoder.enums.MajorColor;
+import colorcoder.enums.MinorColor;
+import colorcoder.util.ColorCodeUtil;
 
 public class Test {
 
 
-   static void testNumberToPair(int pairNumber,
+   public static void testNumberToPair(int pairNumber,
        MajorColor expectedMajor,
        MinorColor expectedMinor)
    {
-       ColorPair colorPair = Main.GetColorFromPairNumber(pairNumber);
+       ColorPair colorPair = ColorCodeUtil.GetColorFromPairNumber(pairNumber);
        System.out.println("Got pair " + colorPair.ToString());
        assert(colorPair.getMajor() == expectedMajor);
        assert(colorPair.getMinor() == expectedMinor);
    }
 
-   static void testPairToNumber(
+   public static void testPairToNumber(
        MajorColor major,
        MinorColor minor,
        int expectedPairNumber)
    {
-       int pairNumber = Main.GetPairNumberFromColor(major, minor);
+       int pairNumber = ColorCodeUtil.GetPairNumberFromColor(major, minor);
        System.out.println("Got pair number " + pairNumber);
        assert(pairNumber == expectedPairNumber);
    }

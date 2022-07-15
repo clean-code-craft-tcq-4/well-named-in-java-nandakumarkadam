@@ -1,5 +1,9 @@
 package colorcoder;
 
+import colorcoder.constants.Constants;
+import colorcoder.enums.MajorColor;
+import colorcoder.enums.MinorColor;
+
 public class ColorPair {
     private MajorColor majorColor;
     private MinorColor minorColor;
@@ -15,10 +19,10 @@ public class ColorPair {
     public MinorColor getMinor() {
         return minorColor;
     }
-    String ToString() {
-        String colorPairStr = Main.MajorColorNames[majorColor.getIndex()];
+    public String ToString() {
+        String colorPairStr = Constants.MajorColorNames[majorColor.getIndex()];
         colorPairStr += " ";
-        colorPairStr += Main.MinorColorNames[minorColor.getIndex()];
+        colorPairStr += Constants.MinorColorNames[minorColor.getIndex()];
         return colorPairStr;
     }
 };

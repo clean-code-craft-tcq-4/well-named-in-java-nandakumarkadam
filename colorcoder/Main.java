@@ -1,22 +1,11 @@
 package colorcoder;
 
+import colorcoder.constants.Constants;
+import colorcoder.enums.MajorColor;
+import colorcoder.enums.MinorColor;
+import colorcoder.test.Test;
+
 public class Main {
-
-	final static String MajorColorNames[] = { "White", "Red", "Black", "Yellow", "Violet" };
-	final static int numberOfMajorColors = MajorColorNames.length;
-	final static String MinorColorNames[] = { "Blue", "Orange", "Green", "Brown", "Slate" };
-	final static int numberOfMinorColors = MinorColorNames.length;
-
-	public static ColorPair GetColorFromPairNumber(int pairNumber) {
-		int zeroBasedPairNumber = pairNumber - 1;
-		MajorColor majorColor = MajorColor.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
-		MinorColor minorColor = MinorColor.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
-		return new ColorPair(majorColor, minorColor);
-	}
-
-	static int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
-		return major.getIndex() * numberOfMinorColors + minor.getIndex() + 1;
-	}
 
 	public static void main(String[] args) {
 		Test test = new Test();

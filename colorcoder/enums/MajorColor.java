@@ -1,4 +1,4 @@
-package colorcoder;
+package colorcoder.enums;
 
 public enum MajorColor {
     WHITE(0),
@@ -10,7 +10,7 @@ public enum MajorColor {
     private MajorColor(int index) {
         this.index = index;
     }
-    int getIndex() {
+    public int getIndex() {
         return index;
     }
     public static MajorColor fromIndex(int index) {
